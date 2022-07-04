@@ -1,0 +1,48 @@
+{
+	"name": "@skarab/tssert",
+	"version": "1.0.0",
+	"description": "🔥 Micro TypeScript assertion (test) library.",
+	"author": "skarab42",
+	"license": "MIT",
+	"private": false,
+	"main": "./build/index.js",
+	"module": "./build/index.mjs",
+	"types": "./build/index.d.ts",
+	"scripts": {
+		"up-hooks": "npx simple-git-hooks",
+		"prepare": "pnpm up-hooks",
+		"build": "tsup",
+		"check": "tsc -p tsconfig.check.json",
+		"format": "prettier . --write --ignore-path .gitignore",
+		"lint": "eslint . --fix --ext .js,.cjs,.ts --ignore-path .gitignore",
+		"test": "pnpm check && pnpm lint"
+	},
+	"devDependencies": {
+		"@types/node": "^18.0.0",
+		"@typescript-eslint/eslint-plugin": "^5.29.0",
+		"@typescript-eslint/parser": "^5.29.0",
+		"eslint": "^8.18.0",
+		"eslint-config-prettier": "^8.5.0",
+		"lint-staged": "^13.0.3",
+		"prettier": "^2.7.1",
+		"simple-git-hooks": "^2.8.0",
+		"tslib": "^2.4.0",
+		"tsup": "^6.1.2",
+		"typescript": "^4.7.4"
+	},
+	"peerDependencies": {
+		"typescript": "^4.7.4"
+	},
+	"keywords": [
+		"typescript",
+		"assertion",
+		"assert",
+		"expect",
+		"test"
+	],
+	"engines": {
+		"node": ">=12",
+		"pnpm": ">=6"
+	},
+	"packageManager": "pnpm@6.32.4"
+}
