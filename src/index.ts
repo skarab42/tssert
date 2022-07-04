@@ -55,19 +55,19 @@ expectType<TypeB>().toEqual<TypeA>().toBe(true); // ts-error
 export function expectType<TType>(expected?: TType) {
 	return {
 		expected,
-		toExtend<TBaseType>(recived?: TBaseType) {
+		toExtend<TBaseType>(received?: TBaseType) {
 			return {
 				expected,
-				recived,
+				received,
 				toBe(valid: ExpectExtend<TType, TBaseType>) {
 					return valid;
 				},
 			};
 		},
-		toEqual<TOtherType>(recived?: TOtherType) {
+		toEqual<TOtherType>(received?: TOtherType) {
 			return {
 				expected,
-				recived,
+				received,
 				toBe(valid: ExpectEqual<TType, TOtherType>) {
 					return valid;
 				},
